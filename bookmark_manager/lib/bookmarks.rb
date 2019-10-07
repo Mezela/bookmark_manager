@@ -1,6 +1,6 @@
 class Bookmarks
 
-  def list
-    @list =[]
+  def self.all
+    ['http://www.google.com', 'http://sanger.dk']
   end
 end
