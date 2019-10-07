@@ -21,6 +21,9 @@ So that I can find my favourite pages on the Internet
 I would like to view a list of my bookmarks
 ```
 
+### Feature Tests ###
+![](imgs/domainmodel1.jpg)
+
 ##To Setup Datatbase##
 1. Connect to psql
 2. Create the database using the psql command CREATE DATABASE bookmark_manager;
