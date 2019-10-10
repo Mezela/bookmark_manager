@@ -41,4 +41,28 @@ describe Bookmark do
     end
   end
 
+  describe '.update' do
+    it 'updates a bookmark' do
+      bookmark = Bookmark.create(title:'Test Bookmark', url: 'http://www.testbookmark.com')
+      bookmarks = Bookmark.all
+      Bookmark.update(id: bookmark.id, title: 'Still hating this', url: 'http://www.hello.com')
+      persisted_data = persisted_data(id: bookmark.id)
+
+      expect(bookmarks.length).to eq 1
+      expect(bookmark.id).to eq persisted_data['id']
+      expect(bookmarks.first.title).to eq('Still hating this')
+      expect(bookmarks.first.url).to eq('http://www.hello.com')
+    end
+  end
+
+  describe '.find' do
+    it 'returns the bookmark object' do
+      bookmark = Bookmark.create(title:'Test Bookmark', url: 'http://www.testbookmark.com')
+
+      result = Bookmark.find(id: bookmark.id)
+
+      expect(result.id).to eq bookmark.id
+      expect(result.title).to eq "Test Bookmark"
+    end
+  end
 end
