@@ -8,14 +8,14 @@ US1
 ```
 As a time-pressed user
 So that I can quickly go to web sites I regularly visit
-I would like to see a list of bookmarks
+I would like to see a list of bookmarks.
 ```
 
 US2
 ```
 As a time-pressed user
 So that I can save a website
-I would like to add the site's address and title to bookmark manager
+I want to add a bookmark to Bookmark Manager.
 ```
 
 ## Domain Model
