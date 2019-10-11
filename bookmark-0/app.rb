@@ -6,7 +6,7 @@ require 'uri'
 require_relative './lib/comment'
 
 class BookmarkManager < Sinatra::Base
-  
+
   enable :method_override, :sessions
   register Sinatra::Flash
 
@@ -27,7 +27,7 @@ class BookmarkManager < Sinatra::Base
     flash[:notice] = "Invalid bookmark url" unless Bookmark.create(title: params[:title] ,url: params[:url])
     redirect('/bookmarks')
   end
-  
+
   delete '/bookmarks/:id' do
     Bookmark.delete(id: params[:id])
     redirect('/bookmarks')
@@ -45,11 +45,20 @@ class BookmarkManager < Sinatra::Base
 
   get '/bookmarks/:id/comments/new' do
     @bookmarkid = params[:id]
-    erb (:'comments/new')
+    erb(:'comments/new')
   end
 
   post '/bookmarks/:id/comments' do
     Comment.create(bookmark_id: params[:id], text: params[:comment])
+    redirect('/bookmarks')
+  end
+
+  get '/bookmarks/:id/tags/new' do
+    @bookmarkid = params[:id]
+    erb(:'tag/new')
+  end
+
+  post '/bookmark/:id/tags' do
     redirect('/bookmarks')
   end
 

@@ -17,6 +17,9 @@
       <form action='/bookmarks/<%=bookmark.id%>/update'>
         <input type="submit" value="Update" />
       </form>
+      <form action='/bookmarks/<%=bookmark.id%>/tags/new'>
+        <input type="submit" value="Add tag" />
+      </form>
       <ul>
       <% bookmark.comments.each do |comment| %>
         <li><%= comment['text'] %></li>
@@ -25,4 +28,3 @@
     </li>
     <% end %>
 </ol>
-
