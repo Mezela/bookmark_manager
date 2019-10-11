@@ -18,6 +18,20 @@ So that I can save a website
 I want to add a bookmark to Bookmark Manager.
 ```
 
+US3
+```
+As a user
+So I can remove my bookmark from Bookmark Manager
+I want to delete a bookmark
+```
+
+US4
+```
+As a user
+So that I can keep my bookmarks up to date
+I want to edit a bookmark
+```
+
 ## Domain Model
 
 

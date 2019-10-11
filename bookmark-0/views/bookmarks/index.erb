@@ -1,6 +1,6 @@
 <ol>
   <% @bookmarks.each do |bookmark| %>
-    <li <%= bookmark.id %> >
+    <li class="bookmark" id="<%= bookmark.id %>" >
       <a href="<%= bookmark.url %>">
         <%= bookmark.title %>
       </a>
