@@ -7,6 +7,9 @@
       <a href="<%= bookmark.url %>">
         <%= bookmark.title %>
       </a>
+      <form action='/bookmarks/<%=bookmark.id%>/comments/new'>
+        <input type="submit" value="Add comment" />
+      </form>
       <form action='/bookmarks/<%=bookmark.id%>' method='post'>
         <input type='hidden' name='_method' value='DELETE'>
         <input type="submit" value="Delete" />
@@ -14,6 +17,11 @@
       <form action='/bookmarks/<%=bookmark.id%>/update'>
         <input type="submit" value="Update" />
       </form>
+      <ul>
+      <% bookmark.comments.each do |comment| %>
+        <li><%= comment['text'] %></li>
+      <% end %>
+    </ul>
     </li>
     <% end %>
 </ol>
